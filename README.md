@@ -35,8 +35,7 @@ openssl
 zenity 
 - Utilidades básicas de GNU/Linux: find, grep, chmod, cp, rm.
 
-**Uso de la aplicación
-**
+**Uso de la aplicación**
 - Para ejecutar la aplicación correctamente, sigue estos pasos:
 
 1. Accede a la carpeta principal del proyecto, llamada crypto_app:
@@ -49,7 +48,7 @@ chmod +x main.sh
 ⚠️ Importante: La aplicación debe ejecutarse desde su carpeta principal para que funcione correctamente, 
 ya que utiliza rutas relativas para guardar y gestionar claves, archivos cifrados y el directorio keyring.
 
-##Estructura y uso de carpetas dentro de la aplicación##
+**Estructura y uso de carpetas dentro de la aplicación**
 1. keys/: Todas las claves generadas por la aplicación (públicas y privadas) se almacenan automáticamente en esta carpeta.
 
 2. files/: Úsala solo para almacenar los archivos que quieras cifrar o descifrar. Esto asegura que la aplicación funcione de forma organizada y sin errores de ruta.
@@ -66,14 +65,14 @@ Gestión de archivos sensibles: Los archivos de claves (key.bin, privada.pem, et
 Limpieza de temporales: La aplicación intenta eliminar archivos temporales sensibles tras su uso; sin embargo, revisa que no queden restos de archivos críticos.
 Seguridad: No compartas claves privadas ni archivos cifrados con terceros sin un canal seguro.
 
-****Explicación del cifrado híbrido.
-**
+**Explicación del cifrado híbrido.**
 - El cifrado híbrido combina cifrado simétrico (AES-256) y cifrado asimétrico (RSA) para aprovechar lo mejor de ambos mundos: velocidad y seguridad. En la  aplicación funciona así:
 
 1. La aplicación genera una clave AES aleatoria y cifra el archivo con AES-256.
 2. La clave AES se cifra con la clave pública RSA del destinatario.
 3. La clave AES en texto plano se elimina inmediatamente para mantener la seguridad.
 4. Para descifrar, se recupera la clave AES con la clave privada RSA y luego se descifra el archivo original.
+
 
 
 
