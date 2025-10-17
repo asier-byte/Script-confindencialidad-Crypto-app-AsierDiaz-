@@ -62,7 +62,9 @@ Esto garantiza que las operaciones de cifrado, descifrado y gestión de claves s
 
 **Notas**
 Gestión de archivos sensibles: Los archivos de claves (key.bin, privada.pem, etc.) deben mantenerse en un entorno seguro y con permisos restringidos.
+
 Limpieza de temporales: La aplicación intenta eliminar archivos temporales sensibles tras su uso; sin embargo, revisa que no queden restos de archivos críticos.
+
 Seguridad: No compartas claves privadas ni archivos cifrados con terceros sin un canal seguro.
 
 **Explicación del cifrado híbrido.**
@@ -72,6 +74,7 @@ Seguridad: No compartas claves privadas ni archivos cifrados con terceros sin un
 2. La clave AES se cifra con la clave pública RSA del destinatario.
 3. La clave AES en texto plano se elimina inmediatamente para mantener la seguridad.
 4. Para descifrar, se recupera la clave AES con la clave privada RSA y luego se descifra el archivo original.
+
 
 
 
