@@ -1,13 +1,12 @@
-##Título##
+**Título**
 
 Aplicación Bash para operaciones de confidencialidad con OpenSSL
 
-##Objetivo##
+**Objetivo**
 
 Esta aplicación permite realizar operaciones de confidencialidad mediante OpenSSL, incluyendo generación y gestión de claves, cifrado y descifrado de archivos tanto simétrico como asimétrico (híbrido), y administración de claves públicas en un entorno seguro.
 
-##Descripción del proyecto##
-
+**Descripción del proyecto**
 Este proyecto consiste en una aplicación en Bash que permite realizar operaciones de confidencialidad usando OpenSSL. 
 La aplicación ofrece un menú interactivo (en Zenity) que permite:
 
@@ -21,7 +20,10 @@ La aplicación ofrece un menú interactivo (en Zenity) que permite:
 
 <img width="333" height="210" alt="image" src="https://github.com/user-attachments/assets/8a0a66b8-786c-42f2-ac98-ba24c1be21c2" />
 
-##Estructura del proyecto##
+
+
+
+**Estructura del proyecto**
 <img width="421" height="115" alt="image" src="https://github.com/user-attachments/assets/d45be014-b11a-44d2-83fb-34f1fba09526" />
 
 
@@ -33,8 +35,8 @@ openssl
 zenity 
 - Utilidades básicas de GNU/Linux: find, grep, chmod, cp, rm.
 
-##Uso de la aplicación##
-
+**Uso de la aplicación
+**
 - Para ejecutar la aplicación correctamente, sigue estos pasos:
 
 1. Accede a la carpeta principal del proyecto, llamada crypto_app:
@@ -52,24 +54,26 @@ ya que utiliza rutas relativas para guardar y gestionar claves, archivos cifrado
 
 2. files/: Úsala solo para almacenar los archivos que quieras cifrar o descifrar. Esto asegura que la aplicación funcione de forma organizada y sin errores de ruta.
 
-3.keyring/: Carpeta destinada a claves públicas importadas o exportadas. No mezcles las claves generadas aquí; 
+3. keyring/: Carpeta destinada a claves públicas importadas o exportadas. No mezcles las claves generadas aquí; 
 este directorio es exclusivo para intercambio y gestión de claves externas.
 
 ⚠️ Importante:
 "Para el correcto funcionamiento de la aplicación, respeta esta estructura de carpetas y no modifiques las rutas internas a menos que entiendas cómo funciona la app. 
 Esto garantiza que las operaciones de cifrado, descifrado y gestión de claves se realicen correctamente."
 
-##Notas##
+**Notas**
 Gestión de archivos sensibles: Los archivos de claves (key.bin, privada.pem, etc.) deben mantenerse en un entorno seguro y con permisos restringidos.
 Limpieza de temporales: La aplicación intenta eliminar archivos temporales sensibles tras su uso; sin embargo, revisa que no queden restos de archivos críticos.
 Seguridad: No compartas claves privadas ni archivos cifrados con terceros sin un canal seguro.
 
-##Explicación del cifrado híbrido.##
+****Explicación del cifrado híbrido.
+**
 - El cifrado híbrido combina cifrado simétrico (AES-256) y cifrado asimétrico (RSA) para aprovechar lo mejor de ambos mundos: velocidad y seguridad. En la  aplicación funciona así:
 
 1. La aplicación genera una clave AES aleatoria y cifra el archivo con AES-256.
 2. La clave AES se cifra con la clave pública RSA del destinatario.
 3. La clave AES en texto plano se elimina inmediatamente para mantener la seguridad.
 4. Para descifrar, se recupera la clave AES con la clave privada RSA y luego se descifra el archivo original.
+
 
 
