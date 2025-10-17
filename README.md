@@ -22,22 +22,10 @@ La aplicación ofrece un menú interactivo (en Zenity) que permite:
 <img width="333" height="210" alt="image" src="https://github.com/user-attachments/assets/8a0a66b8-786c-42f2-ac98-ba24c1be21c2" />
 
 ##Estructura del proyecto##
-crypto_app/
-│
-├─ main.sh    # Script principal con el menú y funciones
-├─ keyring/                   # Directorio para claves públicas importadas/exportadas
-├─ keys/                # Directorio donde se almacenan todo tipos de claves creadas desde la app
-├─ README.md                  # Este archivo
-└─ files/                  # Directorio que almacena los archiivos "txt" que serán cifrados o descifrados
-├─ gestion_claves.sh    # Script que permite la opción de generar claves
-├─ gestion_publicas.sh    # Script que permite gestionar todo lo relacionado con las claves públicas(Visualizar,Buscar,Importar,Exportar)
-├─ clave_random.sh    # Script que permite la generación de una clave random para un uso posterior
-├─ cifrado_asimetrico.sh    # Script que permite usar la criptografia asimetrica
-├─ cifrado_simetrico.sh    # Script que permite usar la criptografia simetrica
+<img width="421" height="115" alt="image" src="https://github.com/user-attachments/assets/d45be014-b11a-44d2-83fb-34f1fba09526" />
 
 
-##Requisitos del sistema##
-
+**Requisitos del sistema**
 - Sistema operativo: Debian 12 (o Linux compatible).
 - Software necesario:
 bash
@@ -83,4 +71,5 @@ Seguridad: No compartas claves privadas ni archivos cifrados con terceros sin un
 2. La clave AES se cifra con la clave pública RSA del destinatario.
 3. La clave AES en texto plano se elimina inmediatamente para mantener la seguridad.
 4. Para descifrar, se recupera la clave AES con la clave privada RSA y luego se descifra el archivo original.
+
 
